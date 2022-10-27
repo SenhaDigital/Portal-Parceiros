@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stilovideo.scss" media="screen" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+body{
+    background-color: #f2f2f2;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+  padding-left: 30px;
+}
+
+.square:hover {
+    -webkit-transform: translate(20px, -10px);
+    -ms-transform: translate(10px, -10px);
+    transform: translate(10px, -10px);
+    -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+     }
+
+
+
+.square{
+  width: 460px;
+	height: 470px;
+	background: white;
+
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-left: 50px;
+  box-shadow: 0px 20px 50px #D9DBDF;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+
+.mask{
+  clip: rect(0px, 460px, 220px, 0px);
+  border-radius: 15px;
+  position: absolute;
+}
+
+img{
+  width: 460px;
+  }
+
+.h1{
+  margin: auto;
+  text-align: left;
+  margin-top: 240px;
+  padding-left: 30px;
+  
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+}
+p{
+ text-align: justify; 
+ padding-left: 30px;
+ padding-right: 30px;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-size: 12px;
+ color: #000000;
+ line-height: 18px;
+}
+
+.button {
+    background-color: #3EDD84;
+    color: white;
+    width: 90px;
+    padding: 10px 5px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'merriweather';
+}
+</style>
+<body>
+    
+    <div class="container">
+        <div class="square">
+            <img src="imagens/assinaturaoucertificado.jpg"
+                class="mask">
+            <div class="h1">1 - Assinatura ou Certificado digital?</div>
+            <p>Muita gente utiliza a expressão Assinatura Digital ou Assinatura Eletrônica para uma mesma ideia. No entanto, existe sim diferença entre elas..</p>
+            <div>
+                <a href="artigos/Certificado Digital ou Assinatura Digital.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+            
+        </div>
+        <div class="square">
+            <img src="imagens/a1oua3.png"
+                class="mask">
+            <div class="h1">2 - Certificado A1 ou A3</div>
+            <p> O Certificado Digital A1 possui seu armazenamento diretamente no computador. Ele funciona por meio de um par de chaves criptografadas, uma pública e ..</p>
+            <div>
+                <a href="artigos/Diferença entre o Certificado Digital A1e A3.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="square">
+            <img src="imagens/delivery.png"
+                class="mask">
+            <div class="h1">3 - Emissão por Delivery</div>
+            <p>Com o serviço de Delivery nosso cliente pode optar pela comodidade de emitir seu certificado digital sem sair de casa ou do escritório. Um Agente de Registro...</p>
+            <div>
+                <a href="artigos/Emissão de Certificado Digital por Delivery.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+        <div class="square">
+            <img src="imagens/videoconferencia.png"
+                class="mask">
+            <div class="h1">4 - videoconferencia</div>
+            <p> Optar pelo uso de um Certificado Digital é um processo de liberação sem volta, sem fila, tudo na hora. Com a emissão por videoconferência você realiza a validação..</p>
+            <div>
+                <a href="artigos/Emissão de Certificado Digital por Videoconferência.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="square">
+            <img src="imagens/fraude.jpg"
+                class="mask">
+            <div class="h1">5 - Fraude</div>
+            <p>Os certificados digitais ICP-Brasil servem para identificar as pessoas, empresas e coisas no meio eletrônico; e para cada situação é emitido um tipo específico de registro eletrônico.</p>
+                <div>
+                    <a href="artigos/O Certificado Digital no combate a fraudes.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+        <div class="square">
+            <img src="imagens/assinatura certo.jpg"
+                class="mask">
+            <div class="h1">6 - Assinatura</div>
+            <p> A Assinatura Digital equivale a uma assinatura de próprio punho. É uma tecnologia utilizada para autenticar documentos eletrônicos e vincula o Certificado Digital ao documento eletrônico que está sendo assinado.</p>
+                <div>
+                    <a href="artigos/O que é a Assinatura Digital.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="square">
+            <img src="imagens/certificado2.jpg"
+                class="mask">
+            <div class="h1">7 - Oque é Certificado Digital</div>
+            <p>O Certificado Digital é um documento eletrônico que contém dados sobre a pessoa física ou jurídica que o utiliza, que confere validade jurídica e aspectos de segurança digital em transações digitais.</p>
+                <div>
+                    <a href="artigos/oque é certificado digital.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+        <div class="square">
+            <img src="imagens/certificiado.jpg"
+                class="mask">
+            <div class="h1">8 - Quem pode ter o Certificado</div>
+            <p> O Certificado Digital pode ser utilizado por toda e qualquer pessoa que esteja com situação cadastral regular.</p>
+            <div>
+                <a href="artigos/Quem pode ter o Certificado Digital.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="square">
+            <img src="imagens/advogado.jpg"
+                class="mask">
+            <div class="h1">9 - Quem precisa do Certificado?</div>
+            <p>O Certificado Digital fornece amplas funcionalidades tanto para pessoas físicas como jurídicas, sendo obrigatório para empresas enquadradas no regime Lucro Presumido.</p>
+                <div>
+                    <a href="artigos/Quem precisa de certificado digital.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+        <div class="square">
+            <img src="imagens/kitcertificadodigital-valid.png"
+                class="mask">
+            <div class="h1">10 - Tipos de Midias</div>
+            <p>Seu Certificado Digital pode ser armazenado em 4 diferentes tipos de mídias: Arquivo, Token, Cartão e Nuvem.</p>
+                <div>
+                    <a href="artigos/Tipos de mídias dos Certificados Digitais.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+        </div>
+    </div>
+    
+    </div>
+    
+</body>
+</html>

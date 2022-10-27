@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stilovideo.scss" media="screen" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+body{
+    background-color: #f2f2f2;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+  padding-left: 30px;
+}
+
+/*
+.square:hover {
+    -webkit-transform: translate(20px, -10px);
+    -ms-transform: translate(10px, -10px);
+    transform: translate(10px, -10px);
+    -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+     }
+*/
+
+
+.square{
+  width: 460px;
+  height: 300px;
+  background: white;
+  border-radius: 4px;
+  margin-left: 50px;
+  box-shadow: 10px 10px 10px #abadae;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+
+.mask{
+  clip: rect(0px, 460px, 220px, 0px);
+  border-radius: 15px;
+  position: absolute;
+}
+
+/*img{
+  width: 460px;
+  }
+*/
+
+.h1{
+  margin: auto;
+  text-align: left;
+  margin-top: 50px;
+  padding-left: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+}
+p{
+ text-align: justify; 
+ padding-left: 30px;
+ padding-right: 30px;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-size: 12px;
+ color: #000000;
+ line-height: 18px;
+}
+
+.button {
+    background-color: #27a0f1;
+    color: white;
+    width: 90px;
+    padding: 12px 7px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'merriweather';
+}
+</style>
+<body>
+    
+    <div class="container">
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/1.png"
+                class="mask">-->
+            <div class="h1">1 - Inicio & agendamento</div>
+            <p>Para iniciar o atendimento é necessário realizar primeiro o agendamento do ticket dentro do SAR.
+                Para realizar o agendamento o AGR precisa estar com os dados do cliente em mãos(ticket,CPF/CNPJ, e-mail, telefone e nome do cliente ou da empresa).</p>
+            <div><a href="https://senhadigital.com.br/videoportal/Inicioeagendamento.mp4" target="conteudo" class="button">Acessar Video</a>
+                <a href="apresentacoes/inicio e agendamento.pdf" target="conteudo" class="button">Acessar PDF</a></div>
+            
+        </div>
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/2.png"
+                class="mask">-->
+            <div class="h1">2 - Solicitação</div>
+            <p> Após clicar em "Atender agora" no agendamento o AGR irá avançar para a solicitação, nesta parte o AGR deve realizar a captura das biometrias, confirmar os dados do cliente, realizar as consultas blacklist, gerar o termo e gerar a senha de instalação/revogação.</p>
+            <div><a href="https://senhadigital.com.br/videoportal/Solicitacaoeditado.mp4" target="conteudo" class="button">Acessar Video</a>
+                <a href="apresentacoes/solicitacao.pdf" target="conteudo" class="button">PDF</a></div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/3.png"
+                class="mask">-->
+            <div class="h1">3 - Validação</div>
+            <p>Nesta etapa o AGR irá confirmar se as biometrias coletadas estão de acordo com as normativas e padrão exigido, digitar novamente a senha cadastrada na etapa de "solicitação ",anexar o dossiê(documentos e consultas dos documentos) e avançar para etapa de verificação.</p>
+            <div><a href="https://senhadigital.com.br/videoportal/Validacaocortado.mp4" target="conteudo" class="button">Acessar Video</a>
+                <a href="apresentacoes/Validacao.pdf" target="conteudo" class="button">PDF</a></div>
+        </div>
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/3.png"
+                class="mask">-->
+            <div class="h1">4 - Verificação</div>
+            <p> Quando houver a validação biométrica (match biométrico), o sistema realizará
+                a auto verificação com base na análise e aprovação do certificado anterior, e o
+                processo automaticamente será liberado emissão e instalação do certificado
+                digital.</p>
+            <div><a href="https://senhadigital.com.br/videoportal/verificacao.mp4" target="conteudo" class="button">Acessar Video</a>
+                <a href="apresentacoes/Verificacao.pdf" target="conteudo" class="button">PDF</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/3.png"
+                class="mask">-->
+            <div class="h1">5 - Verificação / Revisão</div>
+            <p>O AGR deverá ficar atento aos tickets que estão em STATUS de verificação, pois isso significa que o processo esta em uma central sendo analisada antes de ser liberada para instalação.
+                Caso o STATUS esteja em revisão significa que alguma parte do processo não esta de acordo e o AGR deve corrigir e devolver para a central de verificação para que possa ser analisada novamente e liberado.</p>
+                <div><a href="apresentacoes/Verificacao.pdf" target="conteudo" class="button">PDF</a></div>
+        </div>
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/6.png"
+                class="mask">-->
+            <div class="h1">6 - Emissão</div>
+            <p> Quando o ticket/processo esta com esse STATUS, se for o A1 o cliente poderá instalar o certificado na maquina e se for o A3 o AGR poderá realizar a instalação na mídia (cartão /token)
+                No caso do A3 em nuvem é o cliente que fará a instalação em seu celular.</p>
+                <div><a href="https://senhadigital.com.br/videoportal/Pendentedeemissao.mp4" target="conteudo" class="button">Acessar Video</a>
+                    <a href="apresentacoes/emissao.pdf" target="conteudo" class="button">PDF</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/7.png"
+                class="mask">-->
+            <div class="h1">7 - Revogação</div>
+            <p>A revogação só será possível se o certificado estiver instalado.
+                Para o AGR realizar a revogação ele deverá abrir o ticket/processo no SAR e clicar em REVOGAÇÃO, colocar o motivo dessa revogação e clicar em revogar.
+                O status do processo deve constar como "Certificado revogado por um AGR".</p>
+                <div><a href="https://senhadigital.com.br/videoportal/Revogacao.mp4" target="conteudo" class="button">Acessar Video</a>
+                    </div>
+        </div>
+        <div class="square">
+            <!--<img src="https://senhadigital.com.br/imagensportal/7.png"
+                class="mask">-->
+            <div class="h1">Outros Videos</div>
+            <p>Videos que podem auxiliar na emissão do Certificado Digital por videoconferência ou no atendimento presencial</p>
+                <div><a href="tabelaVideos.html" target="conteudo" class="button">Acessar Video</a>
+                    </div>
+        </div>
+    </div>
+    
+    
+    
+    </div>
+    
+</body>
+</html>
