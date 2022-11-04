@@ -1,0 +1,105 @@
+.body {
+    background-color: #172260;
+}
+
+img {
+    margin-left: 12px;
+    margin-top: 12px;
+    width: 210px;
+    height: 60px;
+}
+
+.nav-side-menu {
+    overflow: auto;
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: 200;
+    background-color: #172260;
+    position: fixed;
+    top: 15px;
+    width: 300px;
+    height: 100%;
+    color: rgb(255, 255, 255);
+}
+
+ul, li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+ul :not(collapsed) .arrow:before,
+li :not(collapsed) .arrow:before {
+    font-family: FontAwesome;
+    content: "\f078";
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+ul .active, li .active {
+    border-left: 3px solid #172260;
+    background-color: #474b61;
+}
+
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+    background-color: #172260;
+    border: none;
+    line-height: 28px;
+    border-bottom: 1px solid #172260;
+    margin-left: 0px;
+}
+
+
+.nav-side-menu .sub-menu li {
+    padding-left: 20px;
+}
+
+
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+    font-family: Fontawesome;
+    content: "\f105";
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+li {
+    padding-left: 0px;
+    border-left: 3px solid #172260;
+    border-bottom: 1px solid #172260;
+}
+
+.nav-side-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    /*Textos Principais*/
+}
+
+li a i {
+    padding-left: 10px;
+    width: 20px;
+    padding-right: 20px;
+}
+
+@media (max-width: 767px) {
+    .nav-side-menu {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (min-width: 767px) {
+    .nav-side-menu .menu-list .menu-content {
+        display: block;
+    }
+}

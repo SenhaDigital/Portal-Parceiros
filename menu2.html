@@ -1,380 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./style/menu.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<style>
-    body{
-        background-color: #172260;
-    }
-    img{
-      margin-left: 5px;
-      margin-top: 5px;
-    }
-    .nav-side-menu {
-    overflow: auto;
-    font-family: verdana;
-    font-size: 12px;
-    font-weight: 200;
-    background-color: #172260;
-    position: fixed;
-    top: 15px;
-    width: 300px;
-    height: 100%;
-    color: rgb(255, 255, 255);
-  }
-  .nav-side-menu .brand {
-    background-color: #172260;
-    line-height: 50px;
-    display: block;
-    text-align: center;
-    font-size: 17px;
-  }
-  .nav-side-menu .toggle-btn {
-    display: none;
-  }
-  .nav-side-menu ul,
-  .nav-side-menu li {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-    line-height: 35px;
-    cursor: pointer;
-    /*    
-      .collapsed{
-         .arrow:before{
-                   font-family: FontAwesome;
-                   content: "\f053";
-                   display: inline-block;
-                   padding-left:10px;
-                   padding-right: 10px;
-                   vertical-align: middle;
-                   float:right;
-              }
-       }
-  */
-  }
-  .nav-side-menu ul :not(collapsed) .arrow:before,
-  .nav-side-menu li :not(collapsed) .arrow:before {
-    font-family: FontAwesome;
-    content: "\f078";
-    display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-    vertical-align: middle;
-  }
-  .nav-side-menu ul .active,
-  .nav-side-menu li .active {
-    border-left: 3px solid #172260;
-    background-color: #474b61;
-  }
-  .nav-side-menu ul .sub-menu li.active,
-  .nav-side-menu li .sub-menu li.active {
-    color: #474b61;
-  }
-  
-  .nav-side-menu ul .sub-menu li.active a,
-  .nav-side-menu li .sub-menu li.active a {
-    color: #474b61;
-  }
-  .nav-side-menu ul .sub-menu li,
-  .nav-side-menu li .sub-menu li {
-    background-color: #172260;
-    border: none;
-    line-height: 28px;
-    border-bottom: 1px solid #172260;
-    margin-left: 0px;
-  }
-  .nav-side-menu ul .sub-menu li:hover,
-  .nav-side-menu li .sub-menu li:hover {
-    background-color: #474b61;
-  }
-  .nav-side-menu ul .sub-menu li:before,
-  .nav-side-menu li .sub-menu li:before {
-    font-family: Fontawesome;
-    content: "\f105";
-    display: inline-block;
-    padding-left: 20px;
-    padding-right: 10px;
-    vertical-align: middle;
-  }
-  .nav-side-menu li {
-    padding-left: 0px;
-    border-left: 3px solid #172260;
-    border-bottom: 1px solid #172260;
-  }
-  .nav-side-menu li a {
-    text-decoration: none;
-    color: #ffffff; /*Textos Principais*/
-  }
-  .nav-side-menu li a i {
-    padding-left: 10px;
-    width: 20px;
-    padding-right: 20px;
-  }
-  .nav-side-menu li:hover {
-    border-left: 3px solid #474b61;
-    background-color: #474b61;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-  @media (max-width: 767px) {
-    .nav-side-menu {
-      position: relative;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    .nav-side-menu .toggle-btn {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      z-index: 10 !important;
-      padding: 3px;
-      background-color: #474b61;
-      color:#172260;
-      width: 40px;
-      text-align: center;
-    }
-    .brand {
-      text-align: left !important;
-      font-size: 22px;
-      padding-left: 20px;
-      line-height: 50px !important;
-      font-weight: bold;
-    }
-  }
-  @media (min-width: 767px) {
-    .nav-side-menu .menu-list .menu-content {
-      display: block;
-    }
-  }
-  body {
-    margin: 0px;
-    padding: 0px;
-  }
-  h6{
-    font-family: FontAwesome;
-    content: "\f105";
-    display: inline-block;
-    padding-left: 100px;
-    padding-right: 10px;
-    vertical-align: middle;
-    
-  }
-  
-  .nav-side-menu ul .sub-menu ul .sub-line li.active,
-  .nav-side-menu li .sub-menu li .sub-line li.active {
-    color: #474b61;
-  }
-  
-  .nav-side-menu ul .sub-menu li .sub-line li.active a,
-  .nav-side-menu li .sub-menu li .sub-line li.active a {
-    color: #474b61;
-  }
-  .nav-side-menu ul .sub-menu li .sub-line li,
-  .nav-side-menu li .sub-menu li .sub-line li {
-    background-color: #172260;;
-    border: none;
-    line-height: 28px;
-    border-bottom: 1px solid #172260;;
-    margin-left: 0px;
-  }
-  .nav-side-menu ul .sub-menu li .sub-line li:hover,
-  .nav-side-menu li .sub-menu li .sub-line li:hover {
-    background-color: #474b61;
-  }
-  .nav-side-menu ul .sub-menu li .sub-line li:before,
-  .nav-side-menu li .sub-menu li .sub-line li:before {
-    font-family: FontAwesome;
-    content: "\f105";
-    display: inline-block;
-    padding-left: 100px;
-    padding-right: 10px;
-    vertical-align: middle;
-  }
-  
-  .nav-side-menu .sub-menu li {
-    padding-left: 20px;
-    border-left: 3px solid #172260;
-    border-bottom: 1px solid #23282e;
-  }
-  .nav-side-menu .sub-menu li a {
-    text-decoration: none;
-    color: #fcfcfc; /* Texto das Letras */
-  }
-  .sub-menu li a i {
-    padding-left: 10px;
-    width: 20px;
-    padding-right: 20px;
-  }
-  .nav-side-menu li .sub-menu li:hover {
-    border-left: 3px solid #d19b3d;
-    background-color: #172260;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-  @media (max-width: 767px) {
-   .nav-side-menu .sub-menu {
-      position: relative;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  .nav-side-menu  .sub-menu .toggle-btn {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      z-index: 10 !important;
-      padding: 3px;
-      background-color: #172260;
-      color:#172260;
-      width: 40px;
-      text-align: center;
-    }
-    
-    .sub-line ul .sub-press li.active,
-  .sub-line li .sub-press li.active {
-    color: #d19b3d;
-  }
-  
-  .sub-line ul .sub-press li.active a,
-  .sub-line li .sub-press li.active a {
-    color: #d19b3d;
-  }
-  .sub-line ul .sub-press li,
-  .sub-line li .sub-press li {
-    background-color: #172260;
-    border: none;
-    line-height: 28px;
-    border-bottom: 1px solid #172260;
-    margin-left: 0px;
-  }
-  .sub-line ul .sub-press li:hover,
-  .sub-line li .sub-press li:hover {
-    background-color: #172260;
-  }
-  .sub-line ul .sub-press li:before,
-  .sub-line li .sub-press li:before {
-    font-family: Arial;
-    content: "\f105";
-    display: inline-block;
-    padding-left: 50px;
-    padding-right: 10px;
-    vertical-align: middle;
-  }
-  
-  .sub-line li {
-    padding-left: 20px;
-    border-left: 3px solid #172260;
-    border-bottom: 1px solid #172260;
-  }
-  .sub-line li a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  .sub-line li a i {
-    padding-left: 50px;
-    width: 20px;
-    padding-right: 20px;
-  }
-  .sub-line li:hover {
-    border-left: 3px solid #172260;
-    background-color: #172260;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-  @media (max-width: 767px) {
-    .sub-line {
-      position: relative;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    .sub-line .toggle-btn {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      z-index: 10 !important;
-      padding: 3px;
-      background-color: #172260;
-      color: #172260;
-      width: 40px;
-      text-align: center;
-    }
-  } }
-</style>
-<body>
-    
-<img src="logo senha 1.png" width="190" height="60"></img>
-<div class="nav-side-menu">
-    <div class="brand"></div>
-  
-        <div class="menu-list">
-  
-            <ul id="menu-content collapse out" class="menu-content ">
-                <li>
-                  <a href="https://senhadigital.com.br/framecolaboradores/" scrolling="yes" target="conteudo">
-                  <i class="fa fa-dashboard fa-lg"></i> Painel Principal
-                  </a>
-                </li>
 
-                <li  data-toggle="collapse" data-target="#products" >
-                  <a href="#"><i class="fa fa-users fa-lg"></i> Atendimento <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <b><a class="dropdown-header">Ferramentas</a></b>
-                     <!--<li><a href="https://www.google.com/search?q=senhadigital+visconde&rlz=1C1GCEA_enBR910BR910&oq=senhadigital+visconde&aqs=chrome..69i57j33i10i160l3.9168j0j7&sourceid=chrome&ie=UTF-8#lrd=0x94dce5df04ab927d:0xc8d5c1cd71bccf4c,1,,," target="_blank">Avaliação Google</a></li>
+<body class="body">
+
+  <img src="./imgLogo/logo senha 1.png"></img>
+  <div class="nav-side-menu">
+
+    <div class="menu-list">
+
+      <ul id="menu-content collapse out" class="menu-content ">
+        <li>
+          <a href="https://senhadigital.com.br/framecolaboradores/" scrolling="yes" target="conteudo">
+            <i class="fa fa-dashboard fa-lg"></i> Painel Principal
+          </a>
+        </li>
+
+        <li data-toggle="collapse" data-target="#products">
+          <a href="#"><i class="fa fa-users fa-lg"></i> Atendimento <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="products">
+          <b><a class="dropdown-header">Ferramentas</a></b>
+          <!--<li><a href="https://www.google.com/search?q=senhadigital+visconde&rlz=1C1GCEA_enBR910BR910&oq=senhadigital+visconde&aqs=chrome..69i57j33i10i160l3.9168j0j7&sourceid=chrome&ie=UTF-8#lrd=0x94dce5df04ab927d:0xc8d5c1cd71bccf4c,1,,," target="_blank">Avaliação Google</a></li>
                    <li><a href="https://form.jotform.com/221015086994054" target="conteudo">Solicitação Ticket</a></li>
                     <li><a href="https://form.jotform.com/221216029961048" target="conteudo">Solicitação Reembolso</a></li>
                     <li><a href="https://sd.totalerp.com.br/" target="conteudo">Indicação TotalERP </a></li>-->
-                    <li><a href="https://validacao-interna.validcertificadora.com.br/" target="conteudo">Validação Video</a></li>
-                    <b><a class="dropdown-header">Portais de Consulta</a></b>
-                    <li><a href="http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank">Consulta CNPJ</a></li>
-                    <li><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" target="conteudo">Consulta CPF</a></li>
-                    <li><a href="https://acheumarquiteto.caubr.gov.br/" target="conteudo">CAU - Arquitetos</a></li>
-                    <li><a href="https://cfa.org.br/cadastro-nacional/" target="conteudo">CFA - Administradores</a></li>
-                    <li><a href="https://cfa.org.br/cadastro-nacional/" target="conteudo">CFC - Contadores</a></li>
-                    <li><a href="http://intranet.oabpr.org.br/servicos/consulta/consulta_advogado1.asp" target="conteudo">OAB PR - Advogados</a></li>
-                    <li><a href="https://antecedentes.dpf.gov.br/antecedentes-criminais/certidao" target="conteudo">Antecedentes Criminais</a></li>
-                    <li><a href="https://servicos.receita.fazenda.gov.br/Servicos/saga/agendamento/RegrasAgendamento.aspx" target="conteudo">Consulta Responsável Legal</a></li>
-                    <li><a href="https://inscritos.corenpr.gov.br/" target="conteudo">COREN - Enfermeiros</a></li>
-                    <li><a href="https://siscad.cfmv.gov.br/paginas/busca" target="conteudo">SISCAD - Veterinários</a></li>
-                    <li><a href="https://www.confef.org.br/confef/registrados/" target="conteudo">CONFEF - Educação Física</a></li>
-                    <li><a href="https://cnn.cfn.org.br/application/index/consulta-nacional" target="conteudo">CFN - Nutricionistas</a></li>
-                    <li><a href="https://www.cfmv.gov.br/busca-por-empresas/servicos/2018/10/09/" target="conteudo">CFMV - Veterinários</a></li>
-                    <li><a href="https://www.crefito5.org.br/consulta-de-profissionais" target="conteudo">Crefito - Fisioterapeuta</a></li>
-                    <li><a href="https://www.detran.pr.gov.br/servicos/consultar-a-pontuacao-da-cnh" target="_blank">Pontuação Carteira</a></li>                   
-                  </ul>
+          <li><a href="https://validacao-interna.validcertificadora.com.br/" target="conteudo">Validação Video</a></li>
+          <b><a class="dropdown-header">Portais de Consulta</a></b>
+          <li><a href="http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/cnpjreva_solicitacao.asp"
+              target="_blank">Consulta CNPJ</a></li>
+          <li><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp"
+              target="conteudo">Consulta CPF</a></li>
+          <li><a href="https://acheumarquiteto.caubr.gov.br/" target="conteudo">CAU - Arquitetos</a></li>
+          <li><a href="https://cfa.org.br/cadastro-nacional/" target="conteudo">CFA - Administradores</a></li>
+          <li><a href="https://cfa.org.br/cadastro-nacional/" target="conteudo">CFC - Contadores</a></li>
+          <li><a href="http://intranet.oabpr.org.br/servicos/consulta/consulta_advogado1.asp" target="conteudo">OAB PR -
+              Advogados</a></li>
+          <li><a href="https://antecedentes.dpf.gov.br/antecedentes-criminais/certidao" target="conteudo">Antecedentes
+              Criminais</a></li>
+          <li><a href="https://servicos.receita.fazenda.gov.br/Servicos/saga/agendamento/RegrasAgendamento.aspx"
+              target="conteudo">Consulta Responsável Legal</a></li>
+          <li><a href="https://inscritos.corenpr.gov.br/" target="conteudo">COREN - Enfermeiros</a></li>
+          <li><a href="https://siscad.cfmv.gov.br/paginas/busca" target="conteudo">SISCAD - Veterinários</a></li>
+          <li><a href="https://www.confef.org.br/confef/registrados/" target="conteudo">CONFEF - Educação Física</a>
+          </li>
+          <li><a href="https://cnn.cfn.org.br/application/index/consulta-nacional" target="conteudo">CFN -
+              Nutricionistas</a></li>
+          <li><a href="https://www.cfmv.gov.br/busca-por-empresas/servicos/2018/10/09/" target="conteudo">CFMV -
+              Veterinários</a></li>
+          <li><a href="https://www.crefito5.org.br/consulta-de-profissionais" target="conteudo">Crefito -
+              Fisioterapeuta</a></li>
+          <li><a href="https://www.detran.pr.gov.br/servicos/consultar-a-pontuacao-da-cnh" target="_blank">Pontuação
+              Carteira</a></li>
+        </ul>
 
 
-               <!-- <li data-toggle="collapse" data-target="#service" class="collapsed">
+        <!-- <li data-toggle="collapse" data-target="#service" class="collapsed">
                   <a href="#"><i class="fa fa-briefcase fa-lg"></i> Comercial <span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
@@ -402,78 +101,88 @@
                   
                 </ul>-->
 
-                <li data-toggle="collapse" data-target="#RH" class="collapsed">
-                <a href="#"><i class="fa fa-users fa-lg"></i> RH <span class="arrow"></span></a>
-                </li>  
-                <ul class="sub-menu collapse" id="RH">
-                <!--<li><a href="https://pframesenha.nicepage.io/RH.html" target="conteudo">Colaboradores</a></li>-->
-                <li><a href="https://onvio.com.br/login/#/?d=https:%2F%2Fonvio.com.br%2Fatendimento-client%2F%23%2F" target="conteudo">Holerites</a></li>
-                <!--<li><a href="https://form.jotform.com/212583675217662" target="conteudo">Cadastro Colaboradores</a></li>-->
-                <!--<li><a href="https://www.jotform.com/tables/212006431237644" target="conteudo">Relatorio Colaboradores</a></li>
+        <li data-toggle="collapse" data-target="#RH" class="collapsed">
+          <a href="#"><i class="fa fa-users fa-lg"></i> RH <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="RH">
+          <!--<li><a href="https://pframesenha.nicepage.io/RH.html" target="conteudo">Colaboradores</a></li>-->
+          <li><a href="https://onvio.com.br/login/#/?d=https:%2F%2Fonvio.com.br%2Fatendimento-client%2F%23%2F"
+              target="conteudo">Holerites</a></li>
+          <!--<li><a href="https://form.jotform.com/212583675217662" target="conteudo">Cadastro Colaboradores</a></li>-->
+          <!--<li><a href="https://www.jotform.com/tables/212006431237644" target="conteudo">Relatorio Colaboradores</a></li>
                 <li><a href="apresentacoes/ManualdeIntegraoeCompliance.pdf" target="conteudo">Regras e Compliance</a></li>-->
 
-                </ul>
+        </ul>
 
-                <li data-toggle="collapse" data-target="#Tecnico" class="collapsed">
-                    <a href="#"><i class="fa fa-code fa-lg"></i> Suporte <span class="arrow"></span></a>
-                </li>  
-                <ul class="sub-menu collapse" id="Tecnico">
-                 
-                  <li><a href="https://wa.me/554188008971" target="_blank">Falar com o Suporte</a></li>
-                  <!--<li><a href="https://ac.senhadigital.com.br/wp-login.php" target="_blank">Painel AC.Senha</a></li>
+        <li data-toggle="collapse" data-target="#Tecnico" class="collapsed">
+          <a href="#"><i class="fa fa-code fa-lg"></i> Suporte <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="Tecnico">
+
+          <li><a href="https://wa.me/554188008971" target="_blank">Falar com o Suporte</a></li>
+          <!--<li><a href="https://ac.senhadigital.com.br/wp-login.php" target="_blank">Painel AC.Senha</a></li>
                   <li><a href="https://senhadigital.com.br/wp-admin/" target="_blank">Painel Senha</a></li>
                   <li><a href="https://trello.com/b/YIesDwyw/ti-senha-digital" target="_blank">Trello</a></li>
                   <li><a href="https://ar-admin.vpki.com.br/ra-admin-web/pages/public/login.jsf" target="_blank">Habilitar Máquina</a></li>
                   <li><a href="http://www.validcertificadora.com.br/P/108D2447-CAB3-4845-B071-EF3BD433478A/RD026817" target="_blank">Comprar Ticket</a></li>
                   <li><a href="https://atendimento.vpki.com.br/otrs/customer.pl?Action=CustomerTicketOverview;Subaction=MyTickets" target="_blank">Abrir Chamado</a></li>
                   <li><a href="https://senhadigital.egac.com.br/Login?Sem%20Permiss%C3%A3o" target="_blank">Egac</a></li>-->
-                  <li><a href="https://www.validcertificadora.com.br/index.aspx?DID=473" target="_blank">Instalação A1</a></li>
-                  <li><a href="https://www.validcertificadora.com.br/a3" target="_blank">Instalação A3</a></li>
-                  <li><a href="https://certificado-em-nuvem.validcertificadora.com.br/" target="_blank">Instalação Nuvem</a></li>
-                 <!-- <li><a href="https://cpanel.senhadigital.com.br/" target="_blank">CPANEL Senha</a></li>-->
-                  <li><a href="https://senhadigital.com.br/instalacao/" target="conteudo">Drivers Certificado</a></li>
-                  <li><a href="https://senhadigital.com.br/desbloquear-a3-safesign/" target="conteudo">Desbloquear Safesign</a></li>
-                  <li><a href="https://senhadigital.com.br/desbloquear-a3-safenet/" target="conteudo">Desbloquear Safenet</a></li>
-                  <li><a href="https://senhadigital.com.br/docsportal/Como%20Fazer%20a%20Limpeza%20da%20M%c3%addia%20-%20safesign.pdf" target="conteudo">Limpar Mídia Safesign</a></li>
-                  <li><a href="https://senhadigital.com.br/docsportal/Como%20Fazer%20a%20Limpeza%20da%20M%c3%addia%20-%20Safenet.pdf" target="conteudo">Limpar Mídia Safenet</a></li>
-                  <!--<li><a href="https://www.jotform.com/pt/myforms/" target="_blank">JotForm</a></li>
+          <li><a href="https://www.validcertificadora.com.br/index.aspx?DID=473" target="_blank">Instalação A1</a></li>
+          <li><a href="https://www.validcertificadora.com.br/a3" target="_blank">Instalação A3</a></li>
+          <li><a href="https://certificado-em-nuvem.validcertificadora.com.br/" target="_blank">Instalação Nuvem</a>
+          </li>
+          <!-- <li><a href="https://cpanel.senhadigital.com.br/" target="_blank">CPANEL Senha</a></li>-->
+          <li><a href="https://senhadigital.com.br/instalacao/" target="conteudo">Drivers Certificado</a></li>
+          <li><a href="https://senhadigital.com.br/desbloquear-a3-safesign/" target="conteudo">Desbloquear Safesign</a>
+          </li>
+          <li><a href="https://senhadigital.com.br/desbloquear-a3-safenet/" target="conteudo">Desbloquear Safenet</a>
+          </li>
+          <li><a
+              href="https://senhadigital.com.br/docsportal/Como%20Fazer%20a%20Limpeza%20da%20M%c3%addia%20-%20safesign.pdf"
+              target="conteudo">Limpar Mídia Safesign</a></li>
+          <li><a
+              href="https://senhadigital.com.br/docsportal/Como%20Fazer%20a%20Limpeza%20da%20M%c3%addia%20-%20Safenet.pdf"
+              target="conteudo">Limpar Mídia Safenet</a></li>
+          <!--<li><a href="https://www.jotform.com/pt/myforms/" target="_blank">JotForm</a></li>
                   <li><a href="https://form.jotform.com/221234830478051" target="conteudo">Inventario Senha</a></li>
                   <li><a href="https://www.jotform.com/tables/221234830478051" target="conteudo">Relatorio Inventario</a></li>
                   <li><a href="https://www.jotform.com/tables/211855963263058" target="conteudo">Configuração SDSign</a></li>
                   <li><a href="https://www.jotform.com/tables/221163718147050" target="conteudo">Configuração SDDoc</a></li>
                   <li><a href="https://www.jotform.com/tables/221163617152650" target="conteudo">Configuração WhiteLabel</a></li>
                   <li><a href="https://www.jotform.com/tables/212663108800044" target="conteudo">Configuração Link</a></li>-->
-                </ul>
+        </ul>
 
-                <li data-toggle="collapse" data-target="#Operacional" class="collapsed">
-                    <a href="#"><i class="fa fa-smile-o fa-lg"></i> Operacional <span class="arrow"></span></a>
-                  </li>  
-                  <ul class="sub-menu collapse" id="Operacional">
-                   <!-- <li><a href="https://docs.google.com/spreadsheets/d/1J1DnxIFETk9BwFKpYfd6mPfpsAlfVq7geAuX0pod7PQ/edit" target="conteudo">Planilha Voucher</a></li>
+        <li data-toggle="collapse" data-target="#Operacional" class="collapsed">
+          <a href="#"><i class="fa fa-smile-o fa-lg"></i> Operacional <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="Operacional">
+          <!-- <li><a href="https://docs.google.com/spreadsheets/d/1J1DnxIFETk9BwFKpYfd6mPfpsAlfVq7geAuX0pod7PQ/edit" target="conteudo">Planilha Voucher</a></li>
                     <li><a href="https://trello.com/b/g9VEB6td/gest%C3%A3o-operacional" target="conteudo">Trello</a></li>-->
-                    <b><a class="dropdown-header">Manuais AGR</a></b>
-                    <!--<li><a href="tabela.html" target="conteudo">Manuais Habilitação</a></li>-->
-                    <!--<li><a href="apresentacoes/validid.pdf" target="conteudo">Documento de Apoio</a></li>-->
-                    <li><a href="videos.html" target="conteudo">Manuais sobre Atendimento</a></li>
-                    <b><a class="dropdown-header">Ferramentas AGR</a></b>
-                    <li><a href="https://wa.me/554188008971" target="conteudo">Falar com o Operacional</a></li>
-                    <li><a href="https://form.jotform.com/212358570052047" target="conteudo">Solicitar estoque</a></li>
-                    <li><a href="https://rastreamento.correios.com.br/app/index.php" target="conteudo">Rastreamento Correios</a></li>
-                    <!--<b><a class="dropdown-header">CAR</a></b>
+          <b><a class="dropdown-header">Manuais AGR</a></b>
+          <!--<li><a href="tabela.html" target="conteudo">Manuais Habilitação</a></li>-->
+          <!--<li><a href="apresentacoes/validid.pdf" target="conteudo">Documento de Apoio</a></li>-->
+          <li><a href="videos.html" target="conteudo">Manuais sobre Atendimento</a></li>
+          <b><a class="dropdown-header">Ferramentas AGR</a></b>
+          <li><a href="https://wa.me/554188008971" target="conteudo">Falar com o Operacional</a></li>
+          <li><a href="https://form.jotform.com/212358570052047" target="conteudo">Solicitar estoque</a></li>
+          <li><a href="https://rastreamento.correios.com.br/app/index.php" target="conteudo">Rastreamento Correios</a>
+          </li>
+          <!--<b><a class="dropdown-header">CAR</a></b>
                     <li><a href="https://www.gov.br/pt-br/servicos/cadastro-de-agentes-de-registro-da-icp-brasil" target="_blank">Cadastrar AGR da ICP-Brasil</a></li>
                     <li><a href="https://www.gov.br/iti/pt-br/assuntos/cadastro-de-agente-de-registro-car/car" target="_blank">Publicação</a></li>
                     <b><a class="dropdown-header">ITI</a></b>
                     <li><a href="https://estrutura.iti.gov.br/" target="conteudo">Estrutura</a></li>
                     <li><a href="https://verificador.iti.gov.br/verifier-2.8.1/" target="conteudo">Conformidade</a></li>-->
-                    <b><a class="dropdown-header">Ferramentas VALID</a></b>
-                    <li><a href="https://agr.validcertificadora.com.br/#faq" target="_blank">FAQ Valid</a></li>
-                    <!--<li><a href="http://sig-icp-brasil.validcertificadora.com.br/sig-web/pages/public/login.jsf" target="_blank">Relatorio valid</a></li>
+          <b><a class="dropdown-header">Ferramentas VALID</a></b>
+          <li><a href="https://agr.validcertificadora.com.br/#faq" target="_blank">FAQ Valid</a></li>
+          <!--<li><a href="http://sig-icp-brasil.validcertificadora.com.br/sig-web/pages/public/login.jsf" target="_blank">Relatorio valid</a></li>
                     <li><a href="https://ar-admin.vpki.com.br/ra-admin-web/pages/public/login.jsf?faces-redirect=true" target="_blank">SAR Administrativo</a></li>
                     <li><a href="https://agenda-icp-brasil.validcertificadora.com.br/scheduler-web/pages/public/login.jsf" target="_blank">SAR agenda</a></li>-->
-                    <li><a href="https://ar-icp-brasil.validcertificadora.com.br/ra-operator-web/pages/public/login.jsf" target="_blank">SAR produção</a></li>
-                    <li><a href="https://agr.validcertificadora.com.br/" target="conteudo">Portal AGR</a></li>
-                    <!--<li><a href="https://docvalid.validcertificadora.com.br/nuxeo/login.jsp?requestedUrl=ui%2F" target="_blank">DOC VALID</a></li>-->
-                   <!-- <b><a class="dropdown-header">Ferramentas JotForm</a></b>
+          <li><a href="https://ar-icp-brasil.validcertificadora.com.br/ra-operator-web/pages/public/login.jsf"
+              target="_blank">SAR produção</a></li>
+          <li><a href="https://agr.validcertificadora.com.br/" target="conteudo">Portal AGR</a></li>
+          <!--<li><a href="https://docvalid.validcertificadora.com.br/nuxeo/login.jsp?requestedUrl=ui%2F" target="_blank">DOC VALID</a></li>-->
+          <!-- <b><a class="dropdown-header">Ferramentas JotForm</a></b>
                     <li><a href="https://form.jotform.com/212315424065042" target="conteudo">Form Ticket Gratis</a></li>
                     <li><a href="https://www.jotform.com/tables/212315424065042" target="conteudo">Acompanhar Ticket Gratis</a></li>
                     <li><a href="https://www.jotform.com/pdf-editor/220063125148041" target="conteudo">Dossiê Habilitação AGR</a></li>
@@ -484,16 +193,16 @@
                     <b><a class="dropdown-header">Relatorios JotForm</a></b>
                     <li><a href="https://www.jotform.com/tables/212358570052047" target="conteudo">Solicitação estoque</a></li>
                     <li><a href="https://www.jotform.com/tables/220865422100645" target="conteudo">Treinamento AGR</a></li>-->
-                  </ul>
+        </ul>
 
-                  <li data-toggle="collapse" data-target="#Marketing" class="collapsed">
-                    <a href="#"><i class="fa fa-twitter-square fa-lg"></i> Marketing <span class="arrow"></span></a>
-                  </li>  
-                  <ul class="sub-menu collapse" id="Marketing">
-                    <li><a href="https://form.jotform.com/211595934993673" target="_blank">Solicitação Artes</a></li>
-                    <li><a href="https://senhadigital.com.br/blog/category/sem-categoria/" target="_blank">Blog</a></li>
-                    <li><a href="artigosdocs.html" target="conteudo">Artigos sobre Tecnologia</a></li>
-                    <!-- <b><a class="dropdown-header">Artigos sobre Tecnologia</a></b>
+        <li data-toggle="collapse" data-target="#Marketing" class="collapsed">
+          <a href="#"><i class="fa fa-twitter-square fa-lg"></i> Marketing <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="Marketing">
+          <li><a href="https://form.jotform.com/211595934993673" target="_blank">Solicitação Artes</a></li>
+          <li><a href="https://senhadigital.com.br/blog/category/sem-categoria/" target="_blank">Blog</a></li>
+          <li><a href="artigosdocs.html" target="conteudo">Artigos sobre Tecnologia</a></li>
+          <!-- <b><a class="dropdown-header">Artigos sobre Tecnologia</a></b>
                     <li><a href="artigos/Cer" target="conteudo">Artigo 1</a></li>
                     <li><a href="artigos/artigo_02.docx" target="conteudo">Artigo 2</a></li>
                     <li><a href="artigos/artigo_03.docx" target="conteudo">Artigo 3</a></li>
@@ -504,40 +213,41 @@
                     <li><a href="artigos/artigo_08.docx" target="conteudo">Artigo 8</a></li>
                     <li><a href="artigos/artigo_09.docx" target="conteudo">Artigo 9</a></li>
                     <li><a href="artigos/artigo_010.docx" target="conteudo">Artigo 10</a></li>-->
-                    <b><a class="dropdown-header">Dicas Úteis</a></b>
-                    <li><a href="Docs uteis/ComoutilizarMyBusiness-1.docx" target="conteudo">MyBusiness</a></li>
-                    <li><a href="Docs uteis/ComoutilizaroADS.docx" target="conteudo">Usando o ADS</a></li>
-                    <li><a href="Docs uteis/ComovenderpeloWhats.docx" target="conteudo">Vender pelo Whatsapp</a></li>
-                    <li><a href="Docs uteis/Modelosdee-mail.docx" target="conteudo">Modelos de Email</a></li>
-                    <!--<li><a href="https://www.jotform.com/tables/211595934993673" target="conteudo">Relatorio Artes</a></li>
+          <b><a class="dropdown-header">Dicas Úteis</a></b>
+          <li><a href="Docs uteis/ComoutilizarMyBusiness-1.docx" target="conteudo">MyBusiness</a></li>
+          <li><a href="Docs uteis/ComoutilizaroADS.docx" target="conteudo">Usando o ADS</a></li>
+          <li><a href="Docs uteis/ComovenderpeloWhats.docx" target="conteudo">Vender pelo Whatsapp</a></li>
+          <li><a href="Docs uteis/Modelosdee-mail.docx" target="conteudo">Modelos de Email</a></li>
+          <!--<li><a href="https://www.jotform.com/tables/211595934993673" target="conteudo">Relatorio Artes</a></li>
                     <li><a href="https://www.google.com/search?q=senhadigital+visconde&rlz=1C1GCEA_enBR910BR910&oq=senhadigital+visconde&aqs=chrome..69i57j33i10i160l3.9168j0j7&sourceid=chrome&ie=UTF-8#lrd=0x94dce5df04ab927d:0xc8d5c1cd71bccf4c,1,,," target="_blank">Avaliação Google Senha</a></li>
                     <li><a href="https://www.canva.com/" target="_blank">Canva</a></li>
                     <li><a href="https://accounts.mlabs.io/" target="_blank">MLABS</a></li>-->
-                    <b><a class="dropdown-header">Apresentações</a></b>
-                    <!--<li><a href="apresentacoes/apresentacao agencia de registro.pdf" target="conteudo">Agencia de Registro</a></li>-->
-                    <li><a href="apresentacoes/Apresentacaoo SD Sign.pdf" target="conteudo">SDSign</a></li>
-                    <li><a href="apresentacoes/Apresentacaoo SD Doc.pdf" target="conteudo">SDDoc</a></li>
-                    <li><a href="apresentacoes/Institucional Senha Digital.pdf" target="conteudo">Sobre a Senha</a></li>
-                    <li><a href=https://drive.google.com/file/d/1QdBg61X3D9XmvGAZ_oiqogkQcMAne9zR/view?usp=sharing" target="_blank">Live Novos Produtos</a></li>
-                    <!--li><a href="apresentacoes/Proposta Remuneracao.pdf" target="conteudo">Proposta Remuneração</a></li>
+          <b><a class="dropdown-header">Apresentações</a></b>
+          <!--<li><a href="apresentacoes/apresentacao agencia de registro.pdf" target="conteudo">Agencia de Registro</a></li>-->
+          <li><a href="apresentacoes/Apresentacaoo SD Sign.pdf" target="conteudo">SDSign</a></li>
+          <li><a href="apresentacoes/Apresentacaoo SD Doc.pdf" target="conteudo">SDDoc</a></li>
+          <li><a href="apresentacoes/Institucional Senha Digital.pdf" target="conteudo">Sobre a Senha</a></li>
+          <li><a href=https://drive.google.com/file/d/1QdBg61X3D9XmvGAZ_oiqogkQcMAne9zR/view?usp=sharing"
+              target="_blank">Live Novos Produtos</a></li>
+          <!--li><a href="apresentacoes/Proposta Remuneracao.pdf" target="conteudo">Proposta Remuneração</a></li>
                     <li><a href="apresentacoes/Revenda de Certificado digital.pdf" target="conteudo">Revenda Certificado</a></li>
                     <li><a href="apresentacoes/sobre a senha.pdf" target="conteudo">Sobre a Senha</a></li>-->
-                    <b><a class="dropdown-header">Redes Sociais</a></b>
-                    <li><a href="https://www.youtube.com/channel/UCCyt7jTAOZTDHtS1d0sf61g" target="_blank">Youtube</a></li>
-                    <li><a href="https://www.instagram.com/senhadigital/" target="_blank">instagram</a></li>
-                    <li><a href="https://www.facebook.com/senhadigitaloficial" target="_blank">facebook</a></li>
-                    <li><a href="https://www.linkedin.com/company/senhadigitaloficial/" target="_blank">linkedin</a></li>
-                  </ul>
-                  <!--<li data-toggle="collapse" data-target="#Financeiro" class="collapsed">
+          <b><a class="dropdown-header">Redes Sociais</a></b>
+          <li><a href="https://www.youtube.com/channel/UCCyt7jTAOZTDHtS1d0sf61g" target="_blank">Youtube</a></li>
+          <li><a href="https://www.instagram.com/senhadigital/" target="_blank">instagram</a></li>
+          <li><a href="https://www.facebook.com/senhadigitaloficial" target="_blank">facebook</a></li>
+          <li><a href="https://www.linkedin.com/company/senhadigitaloficial/" target="_blank">linkedin</a></li>
+        </ul>
+        <!--<li data-toggle="collapse" data-target="#Financeiro" class="collapsed">
                     <a href="#"><i class="fa fa-money fa-lg"></i> Financeiro <span class="arrow"></span></a>
                   </li>  
                   <ul class="sub-menu collapse" id="Financeiro">
                     <li><a href="https://app.totalerp.com.br/totalerp/login.seam" target="_blank">Emissor de Notas</a></li>
                    <!-- <b><a class="dropdown-header">Formularios</a></b>-->
-                    <!--<li><a href="https://form.jotform.com/221015086994054" target="conteudo">Solicitação de ticket</a></li>
+        <!--<li><a href="https://form.jotform.com/221015086994054" target="conteudo">Solicitação de ticket</a></li>
                     <li><a href="https://form.jotform.com/221216029961048" target="conteudo">Reembolso</a></li>-->
-                  <!--</ul>-->
-                  <!--<li data-toggle="collapse" data-target="#Relacionamento" class="collapsed">
+        <!--</ul>-->
+        <!--<li data-toggle="collapse" data-target="#Relacionamento" class="collapsed">
                     <a href="#"><i class="fa fa-building fa-lg"></i> Relacionamento <span class="arrow"></span></a>
                   </li>  
                   <ul class="sub-menu collapse" id="Relacionamento">
@@ -549,15 +259,15 @@
                     <li><a href="https://www.jotform.com/app/220343791091654" target="conteudo">CMPREMIUM</a></li>
                     <li><a href="https://www.jotform.com/app/220733792983668" target="conteudo">CMBLUE</a></li>
                   </ul>-->
-                  
-                <li data-toggle="collapse" data-target="#Sites" class="collapsed">
-                  <a href="#"><i class="fa fa-certificate fa-lg"></i> Sites Senha <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="Sites">
-                  <li><a href="https://senhadigital.com.br/?unidade=1" target="_blank">Senha Digital</a></li>
-                  <li><a href="https://www.sdsolucoes.tec.br/" target="_blank">SD Soluções</a></li>
-                </ul>
-                <!--<li data-toggle="collapse" data-target="#Outras" class="collapsed">
+
+        <li data-toggle="collapse" data-target="#Sites" class="collapsed">
+          <a href="#"><i class="fa fa-certificate fa-lg"></i> Sites Senha <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="Sites">
+          <li><a href="https://senhadigital.com.br/?unidade=1" target="_blank">Senha Digital</a></li>
+          <li><a href="https://www.sdsolucoes.tec.br/" target="_blank">SD Soluções</a></li>
+        </ul>
+        <!--<li data-toggle="collapse" data-target="#Outras" class="collapsed">
                     <a href="#"><i class="fa fa-certificate fa-lg"></i> Outras Soluções <span class="arrow"></span></a>
                   </li>
                   <ul class="sub-menu collapse" id="Outras">
@@ -568,9 +278,10 @@
                     <li><a href="https://senhadigital.slack.com/ssb/signin_redirect?ssb_vid=.bb954a9cf5fde7514826ae3747ab3f65" target="_blank">Slack</a></li>
                     <li><a href="404.html" target="conteudo">Teste avisos</a></li>
                   </ul>-->
-  
-            </ul>
-     </div>
-</div>
+
+      </ul>
+    </div>
+  </div>
 </body>
+
 </html>
